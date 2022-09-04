@@ -7,8 +7,10 @@ set(SOURCE
 
         )
 set(INCLUDE
-        ${MY_DIRECTORY}/
-        ${MY_DIRECTORY}/
+        ${MY_DIRECTORY}/employees.h
+        ${MY_DIRECTORY}/boss.h
+        ${MY_DIRECTORY}/manager.h
+        ${MY_DIRECTORY}/team.h
         )
 
 
