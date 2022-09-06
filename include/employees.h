@@ -1,6 +1,5 @@
 #include <iostream>
 #pragma once
-
 class Employees {
     std::string employeesName;
 public:
