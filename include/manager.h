@@ -91,7 +91,7 @@ public:
                     switch (taskSelection) {
                         case 1:
                             if (team->taskA != 0) {
-                                std::cout << 7 << std::endl;
+                              //  std::cout << 7 << std::endl;
                                 team->taskA--;
                                 team->workers[i]->setWork('A');
                                 team->busyWorkers++;
@@ -104,7 +104,7 @@ public:
                             }
                         case 2:
                             if (team->taskB != 0) {
-                                std::cout << 8 << std::endl;
+                              //  std::cout << 8 << std::endl;
                                 team->taskB--;
                                 team->workers[i]->setWork('B');
                                 team->busyWorkers++;
@@ -117,7 +117,7 @@ public:
                             }
                         case 3:
                             if (team->taskC != 0) {
-                                std::cout << 9 << std::endl;
+                                //std::cout << 9 << std::endl;
                                 team->taskC--;
                                 team->workers[i]->setWork('C');
                                 team->busyWorkers++;
