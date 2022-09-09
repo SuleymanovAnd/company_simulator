@@ -6,21 +6,25 @@ int main() {
     int number;
     std::cin >> number;
 
-    int end;
+    Boss newBoss = *new Boss ();
     for (int i = 0; i < number;i++){
         int workersAmount;
         std::cout << "Enter the number of workers in " << i+1 << " team.";
         std::cin >> workersAmount;
 
-        Boss newBoss = *new Boss ();
-        for(int j = 0 ; j < end;j++){
-            int task;
-            std::cout << "Enter task: ";
-            std::cin >>task;
-            newBoss.setTask(task);
-            Manager(i,workersAmount,&newBoss);
-        }
+        int task;
 
+        std::cout << "Enter task: ";
+        std::cin >>task;
+        newBoss.setTask(task);
+        Manager taskManager = *new Manager(i,workersAmount,&newBoss);
+            while (!taskManager.allWorkersBusy()){
+                std::cout << "Enter task again: ";
+                std::cin >>task;
+                newBoss.setTask(task);
+                taskManager.creatingABCTasks ();
+                taskManager.distributionOfTasks();
+            }
     }
 
 }

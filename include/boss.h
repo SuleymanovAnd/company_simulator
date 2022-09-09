@@ -6,10 +6,10 @@
 class Boss:public Employees {
     int task;
 public:
-    Boss(){};
+    Boss(){name = getName () + " - BOSS";};
 
     void setTask (int inTask){
-        task =inTask ;
+        task = inTask ; std:: cout << "task set" << std::endl;
     }
     int getTask (){
         return task;
