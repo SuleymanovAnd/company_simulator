@@ -40,7 +40,7 @@ public:
         chief = inChief;
     }
     int allWorkersBusy (){
-       std::cout << (int)team->busyWorkers << std::endl;
+      // std::cout << (int)team->busyWorkers << std::endl;
         return (int)team->busyWorkers - (int)team->workers.size();
     }
 
@@ -49,11 +49,11 @@ public:
         name = getName() + " - manager";
         setChief (newBoss);
         std::cout << name << " get task"<<std::endl;
-        newTeam workTeam; std::cout << "create new team"<<std::endl;
-        setTeam (&workTeam); std::cout << "set new team"<<std::endl;
-        workTeam.workers.resize (amountOfWorkers); std::cout << "resize new team"<<std::endl;
-        creatingABCTasks (); std::cout << "create ABC"<<std::endl;
-        distributionOfTasks();  std::cout << "distribution"<<std::endl;
+        newTeam workTeam; //std::cout << "create new team"<<std::endl;
+        setTeam (&workTeam);// std::cout << "set new team"<<std::endl;
+        workTeam.workers.resize (amountOfWorkers);// std::cout << "resize new team"<<std::endl;
+        creatingABCTasks (); //std::cout << "create ABC"<<std::endl;
+        distributionOfTasks();  //std::cout << "distribution"<<std::endl;
     }
 
     void creatingABCTasks (){
@@ -77,7 +77,7 @@ public:
         bool allWorkersBusy = (int) team->busyWorkers == team->workers.size();
         int allTask = (int) team->taskA + (int) team->taskB + (int) team->taskC;
         for (int i = 0; !allWorkersBusy && allTask != 0; i++) {
-
+// из за не работающего rand решил использовать i для распределения задач
             if (i % 2 == 0 || i == 0) taskSelection = 1;
             if (i % 3 == 0) taskSelection = 2;
             if (i % 4 == 1 || i % 3 == 1) taskSelection = 3;
@@ -85,9 +85,9 @@ public:
             if (team->workers[i] == nullptr) {
                 team->workers[i] = new Worker();
             } else {
-                    std::cout << "worker[i]" << std::endl;
-                    std::cout << team->busyWorkers << "worker busy " << team->workers.size() << " " << allTask << " AllTask"
-                              << std::endl;
+                   // std::cout << "worker[i]" << std::endl;
+                  //  std::cout << team->busyWorkers << "worker busy " << team->workers.size() << " " << allTask << " AllTask"
+                        //      << std::endl;
                     switch (taskSelection) {
                         case 1:
                             if (team->taskA != 0) {
